@@ -1,0 +1,11 @@
+{
+  "name": "gramsetu-ai",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "GramSetu AI: frontend-only English and Telugu government scheme assistant",
+  "engines": {"node": ">=20"},
+  "scripts": {
+    "test": "node --test"
+  }
+}

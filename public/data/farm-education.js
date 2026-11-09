@@ -1,0 +1,103 @@
+import { scheme } from './record.js';
+
+const agriculture = ['Department of Agriculture and Farmers Welfare', 'వ్యవసాయం, రైతు సంక్షేమ శాఖ'];
+const education = ['Department of Higher Education, Ministry of Education', 'ఉన్నత విద్యా శాఖ, విద్యా మంత్రిత్వ శాఖ'];
+const aicte = ['All India Council for Technical Education (AICTE)', 'అఖిల భారత సాంకేతిక విద్యా మండలి (AICTE)'];
+const nsp = 'https://scholarships.gov.in/Students';
+
+export const farmEducation = [
+  scheme({
+    id: 'pm-kisan', name: ['PM-KISAN', 'పీఎం కిసాన్ సమ్మాన్ నిధి'], categories: ['farmers', 'finance'],
+    aliases: ['pmkisan', 'pm kisan', 'p m kisan', 'kissan', 'pm kissan', 'kisan samman nidhi', 'కిసాన్ సమ్మాన్ నిధి', 'పీఎం కిసాన్', 'పిఎం కిసాన్', 'పీఎంకిసాన్'],
+    overview: ['Income support for eligible families that hold cultivable farmland.', 'సాగుభూమి ఉన్న అర్హ రైతు కుటుంబాలకు ఆదాయ సహాయం.'],
+    benefits: ['₹6,000 per year in three equal payments to the beneficiary bank account.', 'ఏడాదికి ₹6,000 చొప్పున మూడు సమాన విడతల్లో లబ్ధిదారు బ్యాంకు ఖాతాకు జమ.'],
+    eligibility: ['The family must hold cultivable land according to official land records. A family is husband, wife and minor children. | Institutional landholders and other excluded groups, including income-tax payers, are ineligible. Review the full exclusions.', 'అధికారిక భూ రికార్డుల ప్రకారం కుటుంబానికి సాగుభూమి ఉండాలి. కుటుంబం అంటే భార్య, భర్త, మైనర్ పిల్లలు. | సంస్థల పేరిట భూమి ఉన్నవారు, ఆదాయ పన్ను చెల్లించేవారు, మార్గదర్శకాల్లో పేర్కొన్న ఇతర వర్గాలు అర్హులు కారు. పూర్తి నిబంధనలు చూడండి.'],
+    documents: ['Aadhaar and a mobile number for registration and authentication. | Cultivable land details and bank account details for verification and payment.', 'నమోదు, గుర్తింపు ధ్రువీకరణకు ఆధార్, మొబైల్ నంబరు. | పరిశీలన, చెల్లింపుల కోసం సాగుభూమి రికార్డులు, బ్యాంకు ఖాతా వివరాలు.'],
+    steps: ['Open New Farmer Registration and complete Aadhaar authentication. | Enter the requested land and payment details and submit for state verification. | Complete e-KYC and use Know Your Status on the portal to track the record.', 'కొత్త రైతు నమోదు పేజీ తెరిచి ఆధార్ ధ్రువీకరణ పూర్తి చేయండి. | భూమి, చెల్లింపు వివరాలు నమోదు చేసి రాష్ట్ర పరిశీలనకు పంపండి. | ఈ-కేవైసీ పూర్తి చేసి పోర్టల్‌లోని Know Your Status ద్వారా స్థితిని తెలుసుకోండి.'],
+    department: agriculture, information: 'https://www.pmkisan.gov.in/',
+    application: 'https://www.pmkisan.gov.in/RegistrationFormupdated.aspx', access: 'online',
+    references: ['https://pmkisan.gov.in/Documents/RevisedPM-KISANOperationalGuidelines%28English%29.pdf'],
+  }),
+  scheme({
+    id: 'pmfby', name: ['Pradhan Mantri Fasal Bima Yojana', 'ప్రధాన మంత్రి ఫసల్ బీమా యోజన'], categories: ['farmers', 'finance'],
+    aliases: ['pmfby', 'fasal bima', 'crop insurance', 'ఫసల్ బీమా', 'పంట బీమా'],
+    overview: ['Insurance for notified crops against covered production losses, subject to the season and state notification.', 'రాష్ట్రం, సీజన్ నోటిఫికేషన్ ప్రకారం ఎంపిక చేసిన పంటలకు నిర్దిష్ట నష్టాలపై బీమా.'],
+    benefits: ['Eligible claims can compensate insured crop losses under the applicable cover. Check the premium and insured amount for your crop and season.', 'వర్తించే బీమా పరిధిలో అర్హమైన పంట నష్టానికి పరిహారం లభించవచ్చు. మీ పంట, సీజన్‌కు ప్రీమియం, బీమా మొత్తాన్ని చూడండి.'],
+    eligibility: ['Cultivators of notified crops in notified areas may enrol, including tenants and sharecroppers with the evidence their state accepts. | Enrolment is subject to state and seasonal dates.', 'ప్రకటించిన ప్రాంతంలో ప్రకటించిన పంట సాగు చేసేవారు నమోదు చేసుకోవచ్చు. రాష్ట్రం అంగీకరించే ఆధారం ఉన్న కౌలు రైతులు, పాలు పంచుకునే సాగుదారులు కూడా దరఖాస్తు చేయవచ్చు. | రాష్ట్రం, సీజన్ వారీ గడువులు వర్తిస్తాయి.'],
+    documents: ['Aadhaar, bank passbook and land or tenancy records accepted by the state. | Sowing certificate or declaration when the notification requires it.', 'ఆధార్, బ్యాంకు పాస్‌బుక్, రాష్ట్రం అంగీకరించే భూమి లేదా కౌలు రికార్డు. | నోటిఫికేషన్‌లో కోరితే విత్తినట్లు ధ్రువపత్రం లేదా స్వీయ ప్రకటన.'],
+    steps: ['Check the notified crops and dates for your area. | Enrol through Farmer Corner or an authorised Common Service Centre (CSC) or bank. | Complete verification, pay the applicable premium and retain the receipt.', 'మీ ప్రాంతానికి ప్రకటించిన పంటలు, గడువులు చూడండి. | ఫార్మర్ కార్నర్ లేదా అధీకృత సాధారణ సేవా కేంద్రం (CSC), బ్యాంకు ద్వారా నమోదు చేసుకోండి. | ధ్రువీకరణ పూర్తి చేసి వర్తించే ప్రీమియం చెల్లించి రసీదు భద్రపరచండి.'],
+    department: agriculture, information: 'https://www.pib.gov.in/PressNoteDetails.aspx?ModuleId=3&NoteId=159760&lang=2&reg=48',
+    application: 'https://pmfby.gov.in/farmerApplicationForm', access: 'online', status: 'seasonal',
+    references: ['https://pmfby.gov.in/pdf/Revamped%20Operational%20Guidelines_17th%20August%202020.pdf'],
+  }),
+  scheme({
+    id: 'kcc', name: ['Kisan Credit Card', 'కిసాన్ క్రెడిట్ కార్డు'], categories: ['farmers', 'finance'],
+    aliases: ['kcc', 'kishan credit card', 'crop loan', 'కిసాన్ క్రెడిట్', 'పంట రుణం'],
+    overview: ['A bank credit facility for eligible farmers to meet cultivation and related working-capital needs.', 'సాగు, సంబంధిత నిర్వహణ ఖర్చులకు అర్హ రైతులకు బ్యాంకులు అందించే రుణ సదుపాయం.'],
+    benefits: ['A revolving credit limit based on the lender’s assessment and applicable scheme norms.', 'బ్యాంకు అంచనా, పథక నియమాల ప్రకారం తిరిగి వినియోగించగల రుణ పరిమితి.'],
+    eligibility: ['Owner cultivators, tenants, oral lessees, sharecroppers and eligible farmer groups may apply. The bank assesses the application.', 'సొంత భూమి సాగుదారులు, కౌలు రైతులు, మౌఖిక కౌలుదారులు, పంట పంచుకునే సాగుదారులు, అర్హ రైతు సంఘాలు దరఖాస్తు చేయవచ్చు. బ్యాంకు దరఖాస్తును పరిశీలిస్తుంది.'],
+    documents: ['Application form, photographs, identity and address proof. | Landholding or other cultivation records required by your lender.', 'దరఖాస్తు, ఫొటోలు, గుర్తింపు, చిరునామా ఆధారాలు. | బ్యాంకు కోరే భూమి లేదా ఇతర సాగు రికార్డులు.'],
+    steps: ['Choose a participating bank and check its KCC terms. | Obtain the KCC application and submit the bank’s checklist to the branch or its application channel. | Keep the reference number and follow up with the bank.', 'పాల్గొనే బ్యాంకును ఎంచుకుని కిసాన్ క్రెడిట్ కార్డు నిబంధనలు చూడండి. | దరఖాస్తు తీసుకుని బ్యాంకు సూచించిన పత్రాలను శాఖలో లేదా దాని అధికారిక మార్గంలో సమర్పించండి. | దరఖాస్తు సంఖ్యను ఉంచుకుని బ్యాంకులో స్థితి తెలుసుకోండి.'],
+    department: ['Department of Financial Services and participating lenders', 'ఆర్థిక సేవల శాఖ, పాల్గొనే రుణ సంస్థలు'],
+    information: 'https://www.myscheme.gov.in/schemes/kcc', access: 'office',
+    references: ['https://sbi.co.in/web/agri-rural/agriculture-banking/crop-loan/kisan-credit-card'],
+  }),
+  scheme({
+    id: 'pmksy', name: ['Pradhan Mantri Krishi Sinchayee Yojana', 'ప్రధాన మంత్రి కృషి సించాయీ యోజన'], categories: ['farmers'],
+    aliases: ['pmksy', 'krishi sinchayee', 'micro irrigation', 'per drop more crop', 'drip irrigation', 'సాగునీరు', 'బిందు సేద్యం', 'డ్రిప్ ఇరిగేషన్'],
+    overview: ['A national irrigation programme with several components. Ask your state about its current micro-irrigation support and implementing scheme.', 'అనేక విభాగాలున్న జాతీయ సాగునీటి కార్యక్రమం. ప్రస్తుతం సూక్ష్మ సాగునీటి సహాయం ఏ పథకం ద్వారా అందుతోందో రాష్ట్ర శాఖను అడగండి.'],
+    benefits: ['Components improve irrigation access and water-use efficiency. Farmer-level equipment support depends on the state programme and approved budget.', 'విభాగాల ద్వారా సాగునీటి అందుబాటు, నీటి వినియోగ సామర్థ్యం మెరుగవుతాయి. రైతుకు పరికరాల సహాయం రాష్ట్ర పథకం, ఆమోదిత నిధులపై ఆధారపడుతుంది.'],
+    eligibility: ['Projects and beneficiary criteria depend on the component, district plan and current state notification.', 'ప్రాజెక్టులు, లబ్ధిదారుల అర్హతలు పథక విభాగం, జిల్లా ప్రణాళిక, తాజా రాష్ట్ర ప్రకటనపై ఆధారపడతాయి.'],
+    documents: ['Request the current local checklist. Individual equipment support may require cultivation and site details.', 'స్థానికంగా అమలులో ఉన్న పత్రాల జాబితాను అడగండి. వ్యక్తిగత పరికరాల సహాయానికి సాగు, స్థల వివరాలు అడగవచ్చు.'],
+    steps: ['Ask the district agriculture or horticulture office which irrigation component is currently available. | Obtain the applicable state form and checklist. | Follow the local inspection and approval process before purchasing equipment.', 'ప్రస్తుతం ఏ సాగునీటి విభాగం అందుబాటులో ఉందో జిల్లా వ్యవసాయ లేదా ఉద్యాన శాఖను అడగండి. | వర్తించే రాష్ట్ర దరఖాస్తు, పత్రాల జాబితా తీసుకోండి. | పరికరాలు కొనేముందు స్థానిక పరిశీలన, అనుమతి విధానం పాటించండి.'],
+    department: ['Central ministries and state irrigation or agriculture departments', 'కేంద్ర మంత్రిత్వ శాఖలు, రాష్ట్ర సాగునీటి లేదా వ్యవసాయ శాఖలు'],
+    information: 'https://www.manage.gov.in/fpoacademy/CGSchemes/PMKSY.pdf', status: 'local',
+    references: ['https://www.pmksy.gov.in/'],
+  }),
+  scheme({
+    id: 'nsp', name: ['National Scholarship Portal', 'జాతీయ ఉపకార వేతనాల పోర్టల్'], categories: ['education'],
+    aliases: ['nsp', 'national scholarship portal', 'scholarships gov in', 'ఎన్‌ఎస్పీ', 'జాతీయ స్కాలర్‌షిప్ పోర్టల్'],
+    overview: ['A government portal for finding and applying to participating scholarship programmes.', 'పాల్గొనే ఉపకార వేతన పథకాలను కనుగొని దరఖాస్తు చేసుకునే ప్రభుత్వ పోర్టల్.'],
+    benefits: ['One student dashboard for scheme listings, applications and tracking. The individual programme defines the award.', 'పథకాల జాబితా, దరఖాస్తు, స్థితి పరిశీలన ఒకే విద్యార్థి డాష్‌బోర్డులో ఉంటాయి. సహాయం మొత్తాన్ని ఆయా పథకం నిర్ణయిస్తుంది.'],
+    eligibility: ['Check the scheme and academic year on NSP. Income, marks, course and residency rules vary.', 'NSPలో సంబంధిత పథకం, విద్యా సంవత్సరం చూడండి. ఆదాయం, మార్కులు, కోర్సు, నివాస అర్హతలు పథకం బట్టి మారుతాయి.'],
+    documents: ['One-Time Registration (OTR) and the documents in the selected scholarship checklist. | The scheme may ask for academic, income or other category-specific records.', 'వన్ టైమ్ రిజిస్ట్రేషన్ (OTR), ఎంపిక చేసిన ఉపకార వేతన పథకపు పత్రాలు. | పథకం ప్రకారం మార్కుల, ఆదాయ లేదా వర్గానికి సంబంధించిన పత్రాలు అడగవచ్చు.'],
+    steps: ['Create an OTR using the official student portal. | Sign in, review schemes and select the correct year and programme. | Submit during the stated window and track institute and department verification.', 'అధికారిక విద్యార్థి పోర్టల్‌లో OTR సృష్టించండి. | ప్రవేశించి సరైన విద్యా సంవత్సరం, పథకం ఎంచుకోండి. | ప్రకటించిన గడువులో దరఖాస్తు చేసి సంస్థ, శాఖ పరిశీలన స్థితి చూడండి.'],
+    department: ['Participating ministries and departments, National Scholarship Portal', 'పాల్గొనే మంత్రిత్వ శాఖలు, విభాగాలు · జాతీయ ఉపకార వేతనాల పోర్టల్'],
+    information: nsp, application: nsp, access: 'online', status: 'seasonal',
+  }),
+  scheme({
+    id: 'pm-usp-csss', name: ['PM-USP Central Sector Scholarship (CSSS)', 'పీఎం-యూఎస్‌పీ కేంద్ర రంగ ఉపకార వేతనం (CSSS)'], categories: ['education', 'finance'],
+    aliases: ['pm usp', 'pm usp csss', 'csss', 'central sector scholarship', 'college university scholarship', 'కేంద్ర రంగ ఉపకార వేతనం', 'సీఎస్‌ఎస్‌ఎస్'],
+    overview: ['Merit-based support for eligible students in regular college or university degree programmes.', 'కళాశాల లేదా విశ్వవిద్యాలయంలో రెగ్యులర్ డిగ్రీ చదివే అర్హ విద్యార్థులకు ప్రతిభ ఆధారిత సహాయం.'],
+    benefits: ['The guidelines specify ₹12,000 annually for the first three undergraduate years and ₹20,000 at eligible later levels, subject to programme rules.', 'మార్గదర్శకాల ప్రకారం డిగ్రీ మొదటి మూడు సంవత్సరాలకు ఏడాదికి ₹12,000, తదుపరి అర్హ దశలకు ₹20,000. కోర్సు నిబంధనలు వర్తిస్తాయి.'],
+    eligibility: ['For fresh applications, above the 80th percentile in the relevant Class 12 board stream and family income up to ₹4.5 lakh per year. | Must be in a recognised regular degree course and meet restrictions on other scholarships and fee reimbursements.', 'కొత్త దరఖాస్తుకు సంబంధిత ఇంటర్మీడియట్ లేదా 12వ తరగతి బోర్డు విభాగంలో 80వ పర్సెంటైల్ కంటే పైగా ఉండాలి. కుటుంబ వార్షిక ఆదాయం ₹4.5 లక్షలకు మించకూడదు. | గుర్తింపు పొందిన రెగ్యులర్ డిగ్రీలో చేరి ఉండాలి. ఇతర ఉపకార వేతనాలు, ఫీజు రీయింబర్స్‌మెంట్‌పై నిబంధనలు వర్తిస్తాయి.'],
+    documents: ['Class 12 results, admission details and a family income certificate for fresh applications. | OTR and any identity or bank proof specified by NSP.', '12వ తరగతి మార్కులు, ప్రవేశ వివరాలు, కొత్త దరఖాస్తుకు కుటుంబ ఆదాయ ధ్రువపత్రం. | OTR, NSP కోరే గుర్తింపు లేదా బ్యాంకు పత్రాలు.'],
+    steps: ['Sign in to NSP using OTR and select PM-USP CSSS fresh or renewal as appropriate. | Complete the form and attach the requested documents. | Submit before the listed deadline and check institution verification.', 'OTRతో NSPలో ప్రవేశించి PM-USP CSSS కొత్త లేదా పునరుద్ధరణ దరఖాస్తును ఎంచుకోండి. | ఫారం పూర్తి చేసి అవసరమైన పత్రాలు జతచేయండి. | చూపిన గడువులో సమర్పించి విద్యాసంస్థ ధ్రువీకరణ స్థితి చూడండి.'],
+    department: education, information: 'https://www.education.gov.in/sites/upload_files/mhrd/files/upload_document/FAQs_PM_USP_CSSS_scheme.pdf',
+    application: nsp, access: 'online', status: 'seasonal',
+  }),
+  ...[
+    {
+      id: 'aicte-pragati', name: ['AICTE Pragati Scholarship', 'ఏఐసీటీఈ ప్రగతి ఉపకార వేతనం'],
+      aliases: ['pragati', 'pragathi', 'aicte pragati', 'ప్రగతి స్కాలర్‌షిప్'],
+      overview: ['A technical education scholarship for eligible girl students.', 'అర్హ బాలికలకు సాంకేతిక విద్య కోసం ఉపకార వేతనం.'],
+      eligibility: ['Girl students in the first year or lateral-entry second year of an eligible AICTE-approved course. | The degree listing specifies family income up to ₹8 lakh and a maximum of two girls per family. Check the current NSP course listing.', 'AICTE ఆమోదించిన అర్హ కోర్సులో మొదటి సంవత్సరం లేదా లేటరల్ ఎంట్రీతో రెండో సంవత్సరం చదివే బాలికలు. | డిగ్రీ పథకం ప్రకారం కుటుంబ ఆదాయం ₹8 లక్షల వరకు ఉండాలి. కుటుంబానికి గరిష్ఠంగా ఇద్దరు బాలికలు. తాజా NSP కోర్సు నిబంధనలు చూడండి.'],
+      documents: ['Admission and academic records, family income certificate and NSP identity and bank documents as requested.', 'ప్రవేశం, మార్కుల రికార్డులు, కుటుంబ ఆదాయ ధ్రువపత్రం, NSP కోరే గుర్తింపు, బ్యాంకు పత్రాలు.'],
+      information: 'https://www.myscheme.gov.in/schemes/psgs-deg',
+      benefits: ['The official degree listing specifies ₹50,000 per year, subject to the course and renewal rules. Check NSP for the diploma listing.', 'అధికారిక డిగ్రీ పథకం ప్రకారం కోర్సు, పునరుద్ధరణ నియమాలకు లోబడి ఏడాదికి ₹50,000. డిప్లొమా వివరాలను NSPలో చూడండి.'],
+    },
+    {
+      id: 'aicte-saksham', name: ['AICTE Saksham Scholarship', 'ఏఐసీటీఈ సక్షమ్ ఉపకార వేతనం'],
+      aliases: ['saksham', 'saksham scholarship', 'aicte saksham', 'సక్షమ్ స్కాలర్‌షిప్', 'సాక్షమ్'],
+      overview: ['A technical education scholarship for eligible students with disabilities.', 'అర్హ దివ్యాంగ విద్యార్థులకు సాంకేతిక విద్య కోసం ఉపకార వేతనం.'],
+      eligibility: ['The technical education department lists a disability of at least 40% and annual family income up to ₹8 lakh. | Check the current NSP listing for approved courses, admission year and other conditions.', 'సాంకేతిక విద్యా శాఖ సమాచారం ప్రకారం కనీసం 40% వైకల్యం ఉండాలి. కుటుంబ వార్షిక ఆదాయం ₹8 లక్షల వరకు ఉండాలి. | ఆమోదిత కోర్సులు, ప్రవేశ సంవత్సరం, ఇతర నిబంధనలకు తాజా NSP జాబితా చూడండి.'],
+      documents: ['Disability certificate, admission and academic records, family income certificate and NSP identity and bank documents as requested.', 'వైకల్య ధ్రువపత్రం, ప్రవేశం, మార్కుల రికార్డులు, కుటుంబ ఆదాయ ధ్రువపత్రం, NSP కోరే గుర్తింపు, బ్యాంకు పత్రాలు.'],
+      information: 'https://dte.maharashtra.gov.in/saksham-scholarship-scheme/',
+    },
+  ].map(entry => scheme({
+    benefits: ['Education assistance under the applicable degree or diploma listing. Check the current NSP listing for the award and renewal conditions.', 'వర్తించే డిగ్రీ లేదా డిప్లొమా పథకం ప్రకారం విద్యా సహాయం. మొత్తం, పునరుద్ధరణ నిబంధనలు తాజా NSP జాబితాలో చూడండి.'],
+    ...entry, categories: ['education', 'finance'],
+    steps: ['Open NSP and use your OTR to sign in. | Select the matching AICTE scheme and course level for your academic year. | Upload the required documents, submit during the posted window and check verification status.', 'NSPలో మీ OTRతో ప్రవేశించండి. | విద్యా సంవత్సరానికి సరిపడే AICTE పథకం, కోర్సు స్థాయి ఎంచుకోండి. | పత్రాలు జతచేసి ప్రకటించిన గడువులో పంపండి. ధ్రువీకరణ స్థితిని చూడండి.'],
+    department: aicte, application: nsp, access: 'online', status: 'seasonal',
+  })),
+];
